@@ -1,0 +1,26 @@
+2019-10-23 15:42:41,021 INFO org.springframework.boot.StartupInfoLogger [main] Starting RatingsDataServiceApplicationTests on localhost.localdomain with PID 21197 (started by dhiego in /home/dhiego/Drive/Developer/Claro/Microservices/Claro_Poc/Movel/Integracao/POC/ratings-data-service-dev/ratings-data-service)
+2019-10-23 15:42:41,029 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-10-23 15:42:41,094 DEBUG org.springframework.context.support.AbstractApplicationContext [main] Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7ce026d3
+2019-10-23 15:42:42,529 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-10-23 15:42:42,874 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-23 15:42:42,892 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-10-23 15:42:43,032 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 4 mappings in 'requestMappingHandlerMapping'
+2019-10-23 15:42:43,053 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-10-23 15:42:43,064 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-10-23 15:42:43,672 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-23 15:42:43,739 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingsDataServiceApplicationTests in 3.039 seconds (JVM running for 3.717)
+2019-10-23 15:42:43,912 DEBUG org.springframework.context.support.AbstractApplicationContext [Thread-2] Closing org.springframework.web.context.support.GenericWebApplicationContext@7ce026d3, started on Wed Oct 23 15:42:41 BRT 2019
+2019-10-23 15:42:43,916 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-2] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-23 15:54:11,849 INFO org.springframework.boot.StartupInfoLogger [main] Starting RatingsDataServiceApplicationTests on localhost.localdomain with PID 22568 (started by dhiego in /home/dhiego/Drive/Developer/Claro/Microservices/Claro_Poc/Movel/Integracao/POC/ratings-data-service-dev/ratings-data-service)
+2019-10-23 15:54:11,853 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-10-23 15:54:11,916 DEBUG org.springframework.context.support.AbstractApplicationContext [main] Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7ce026d3
+2019-10-23 15:54:13,381 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-10-23 15:54:13,684 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-23 15:54:13,702 DEBUG org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-10-23 15:54:13,767 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMethodMapping [main] 4 mappings in 'requestMappingHandlerMapping'
+2019-10-23 15:54:13,855 DEBUG org.springframework.web.servlet.handler.SimpleUrlHandlerMapping [main] Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-10-23 15:54:13,868 DEBUG org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver [main] ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-10-23 15:54:14,464 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-23 15:54:14,529 INFO org.springframework.boot.StartupInfoLogger [main] Started RatingsDataServiceApplicationTests in 2.979 seconds (JVM running for 3.616)
+2019-10-23 15:54:14,728 DEBUG org.springframework.context.support.AbstractApplicationContext [Thread-2] Closing org.springframework.web.context.support.GenericWebApplicationContext@7ce026d3, started on Wed Oct 23 15:54:11 BRT 2019
+2019-10-23 15:54:14,742 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-2] Shutting down ExecutorService 'applicationTaskExecutor'

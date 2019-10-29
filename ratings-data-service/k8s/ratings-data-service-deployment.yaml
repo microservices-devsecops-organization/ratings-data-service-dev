@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ratings-data-service-deployment
+  annotations:
+    author: DhiegoDuarte
+    email: dhiegoduarte@gmail.com
+    company: ClaroBR
+  labels:
+    application: ratings-data-service
+    revision: TODO_COMO_COLOCAR_O_COMMIT_AQUI #4c511f16ef2644854d04cabebfcecc82be0eb04f
+    env: stage
+    version: "1.0.0"
+    owner: movies-squad
+spec:
+  selector:
+    matchLabels:
+      component: ratings-data-service-pod
+  replicas: 1
+  template: 
+    metadata:
+      labels:
+        component: ratings-data-service-pod
+    spec:
+      serviceAccountName: ratings-data-service-service-account
+      securityContext: # usuário e grupo criados no Dockerfile do MS
+        runAsNonRoot: true 
+        runAsUser: 1000 
+        runAsGroup: 3000 
+      containers:
+      - name: ratings-data-service-container
+        # image: ${REPOSITORY_TAG} # TODO utilizado no pipeline do Jenkins
+        # image: 52.14.127.219/ratings-data-service/ratings-data-service-image # TODO utilizado no pipeline do Jenkins da AWS Claro Br
+        # image: dhiegoduarte/ratings-data-service-img # Após o apply executar kubectl set image com a ultima imagem gerada (ex no k8s-appl)
+        image: harbor.claro.com.br/poc-arquitetura/ratings-data-service-img # harbor.claro.com.br/ratings-data-service/ratings-data-service-img
+        securityContext: 
+          allowPrivilegeEscalation: false
+          # privileged: false (default)
+          # readOnlyRootFilesystem: true # TODO tomcat tenta criar /tmp Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to create tempDir. java.io.tmpdir is set to /tmp
+          capabilities:
+            drop:
+            - ALL
+          #   add: 
+          #   - NET_BIND_SERVICE  # TODO permite portas < 1000 (80 e 443). MS POC configurados com 8081, 8082 e 8083
+        resources: # QoS Guaranteed limit e request devem ser iguais. Deve ser definido de acordo com a capacidade de cada ambiente e requisitos de performance
+          limits:
+            cpu: 100m
+            memory: 200Mi 
+          requests:
+            cpu: 100m
+            memory: 200Mi 
+        env: 
+        - name: JAEGER_AGENT_HOST   # NOTE: Point to the Agent daemon on the Node
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: JAEGER_AGENT_PORT # nao deve usar desta forma. Utilizar config-map conforme o movie-catalog-service-deployment acima
+          value: '6831'
+        - name: JAEGER_SERVICE_NAME # nao deve usar desta forma. Utilizar config-map conforme o movie-catalog-service-deployment acima
+          value: ratings-data-service
+          
