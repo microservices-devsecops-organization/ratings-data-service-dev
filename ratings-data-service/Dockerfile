@@ -9,13 +9,13 @@ RUN apk --no-cache add -u musl=1.1.20-r5 \
     && apk --no-cache add -u libtasn1=4.14-r0 \
     && apk --no-cache add libjpeg-turbo=1.5.3-r5
 
-RUN addgroup -g 3000 poc_group
-RUN adduser -D -g '' -G poc_group -u 1000 poc_user
+RUN addgroup -g 3000 ratings-data-service-group
+RUN adduser -D -g '' -G ratings-data-service-group -u 1000 ratings-data-service-user
 
-USER poc_user
-WORKDIR /home/poc_user
+USER ratings-data-service-user
+WORKDIR /home/ratings-data-service-user
 
-COPY --chown=poc_user:poc_group target/ratings-data-service-0.0.1-SNAPSHOT.jar /home/poc_user
+COPY --chown=ratings-data-service-user:ratings-data-service-group target/ratings-data-service-0.0.1-SNAPSHOT.jar /home/ratings-data-service-user
 
 EXPOSE 8083
 
