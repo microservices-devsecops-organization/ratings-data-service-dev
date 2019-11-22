@@ -2,16 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ratings-data-service-deployment
-  annotations:
-    author: DhiegoDuarte
-    email: dhiegoduarte@gmail.com
-    company: ClaroBR
-  labels:
-    application: ratings-data-service
-    revision: TODO_COMO_COLOCAR_O_COMMIT_AQUI #4c511f16ef2644854d04cabebfcecc82be0eb04f
-    env: stage
-    version: "1.0.0"
-    owner: movies-squad
 spec:
   selector:
     matchLabels:
@@ -29,9 +19,7 @@ spec:
         runAsGroup: 3000 
       containers:
       - name: ratings-data-service-container
-        # image: ${REPOSITORY_TAG} # TODO utilizado no pipeline do Jenkins
         # image: 52.14.127.219/ratings-data-service/ratings-data-service-image # TODO utilizado no pipeline do Jenkins da AWS Claro Br
-        # image: dhiegoduarte/ratings-data-service-img # Após o apply executar kubectl set image com a ultima imagem gerada (ex no k8s-appl)
         image: harbor.claro.com.br/poc-arquitetura/ratings-data-service-img # harbor.claro.com.br/ratings-data-service/ratings-data-service-img
         securityContext: 
           allowPrivilegeEscalation: false

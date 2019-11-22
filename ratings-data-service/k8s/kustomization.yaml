@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:
+  author: DhiegoDuarte
+  company: ClaroBR
+commonAnnotations:
+  application: ratings-data-service
+  revision: ${GIT_COMMIT_FORMATTED} # replaced during jenkins pipeline
+  env: ${KUBERNETES_CONTEXT} # replaced during jenkins pipeline
+  version: ${POM_VERSION} # replaced during jenkins pipeline
+  owner: movies-squad
+resources:
+- ./ratings-data-service-cluster-ip-service.yaml
+- ./ratings-data-service-service-account.yaml
+- ./ratings-data-service-deployment.yaml

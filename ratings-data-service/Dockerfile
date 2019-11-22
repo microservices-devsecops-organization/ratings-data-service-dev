@@ -1,9 +1,10 @@
-FROM openjdk:8u212-jdk-alpine3.9
+FROM amd64/openjdk:8-jre-alpine3.9
 
 LABEL author="Dhiego Duarte"
 LABEL email="Dhiego.Duarte.terceiros@claro.com.br"
 LABEL company="Claro BR"
-LABEL version="1.0.0"
+# same version in jar file
+LABEL version="0.0.001-SNAPSHOT" 
 
 RUN apk --no-cache add -u musl=1.1.20-r5 \
     && apk --no-cache add -u libtasn1=4.14-r0 \
