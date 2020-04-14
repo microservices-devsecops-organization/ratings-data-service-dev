@@ -19,17 +19,18 @@ spec:
         runAsGroup: 3000 
       containers:
       - name: ratings-data-service-container
-        # image: 52.14.127.219/ratings-data-service/ratings-data-service-image # TODO utilizado no pipeline do Jenkins da AWS Claro Br
+        # image: 52.14.127.219/ratings-data-service/ratings-data-service-image # utilizado no pipeline do Jenkins da AWS Claro Br
         image: harbor.claro.com.br/poc-arquitetura/ratings-data-service-img # harbor.claro.com.br/ratings-data-service/ratings-data-service-img
+        # image: dhiegoduarte/ratings-data-service-img 
         securityContext: 
           allowPrivilegeEscalation: false
           # privileged: false (default)
-          # readOnlyRootFilesystem: true # TODO tomcat tenta criar /tmp Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to create tempDir. java.io.tmpdir is set to /tmp
+          # readOnlyRootFilesystem: true # tomcat tenta criar /tmp Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to create tempDir. java.io.tmpdir is set to /tmp
           capabilities:
             drop:
             - ALL
           #   add: 
-          #   - NET_BIND_SERVICE  # TODO permite portas < 1000 (80 e 443). MS POC configurados com 8081, 8082 e 8083
+          #   - NET_BIND_SERVICE  # permite portas < 1000 (80 e 443). MS POC configurados com 8081, 8082 e 8083
         resources: # QoS Guaranteed limit e request devem ser iguais. Deve ser definido de acordo com a capacidade de cada ambiente e requisitos de performance
           limits:
             cpu: 100m

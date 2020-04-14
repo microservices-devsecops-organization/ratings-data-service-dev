@@ -18,6 +18,7 @@ public class CorrelationHeaderFilter implements Filter {
 
 
     public void init(FilterConfig filterConfig) throws ServletException {
+//    	Do nothing. Will be implemented in the future
     }
 
 
@@ -32,7 +33,7 @@ public class CorrelationHeaderFilter implements Filter {
             currentCorrId = UUID.randomUUID().toString();
             LOGGER.info("No correlationId found in Header. Generated : " + currentCorrId);
         } else {
-            LOGGER.info("Found correlationId in Header : " + currentCorrId);
+        	LOGGER.info("Found correlationId in Header : " + currentCorrId.replaceAll("[\r\n]","") );
         }
         MDC.put("correlationId", currentCorrId);
         RequestCorrelation.setId(currentCorrId);
@@ -47,8 +48,8 @@ public class CorrelationHeaderFilter implements Filter {
     	MDC.remove("correlationId");
     }
     
-    private boolean currentRequestIsAsyncDispatcher(HttpServletRequest httpServletRequest) {
-        return httpServletRequest.getDispatcherType().equals(DispatcherType.ASYNC);
-    }
+//    private boolean currentRequestIsAsyncDispatcher(HttpServletRequest httpServletRequest) {
+//        return httpServletRequest.getDispatcherType().equals(DispatcherType.ASYNC);
+//    }
 
 }

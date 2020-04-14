@@ -7,5 +7,8 @@ Main technologies and platforms used are:
 * Docker, Kubernetes, Prometheus, Grafana, Elastic Search, FluentD, Kibana, Jaeger, Istio, Helm, Kops
 * Jenkins, Git, Nexus, Harbor, SonarQube, Maven, Junit, FindSecBugs, OWASP DC
 
-![](https://drive.google.com/uc?export=view&id=1aMjaEaPS-vg1lA3WG9GNDDTxTMJtuAtC "")
-<!-- ![](http://coinova.claro.com.br/wp-content/uploads/2019/05/POC-movie-catalog-service-k8s.png "") -->
+### Overview
+![](http://coinova.claro.com.br/wp-content/uploads/2020/04/poc.png "")
+
+### Pipeline DevSecOps
+![](http://coinova.claro.com.br/wp-content/uploads/2020/04/pipeline.png "")

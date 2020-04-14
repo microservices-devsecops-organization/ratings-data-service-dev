@@ -1,11 +1,13 @@
 package br.com.clarobr.ratingsdataservice.model;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class UserRating {
 
     private String userId;
+    
     private List<Rating> ratings;
 
     public String getUserId() {
@@ -17,11 +19,12 @@ public class UserRating {
     }
 
     public List<Rating> getRatings() {
-        return ratings;
+    	return new ArrayList<Rating>(ratings);
     }
 
     public void setRatings(List<Rating> ratings) {
-        this.ratings = ratings;
+    	List<Rating> clone = new ArrayList<>(ratings);
+        this.ratings = clone;
     }
 
     public void initData(String userId) {

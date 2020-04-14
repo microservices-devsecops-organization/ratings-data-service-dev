@@ -3,13 +3,13 @@ kind: Kustomization
 commonLabels:
   application: ratings-data-service
   env: ${KUBERNETES_CONTEXT} # replaced during jenkins pipeline
-  version: ${POM_VERSION} # replaced during jenkins pipeline
   owner: movies-squad
 commonAnnotations:
   author: "Dhiego Duarte"
   email: "dhiego.duarte.terceiros@claro.com.br"
   company: "Claro BR"
   revision: ${GIT_COMMIT_FORMATTED} # replaced during jenkins pipeline
+  version: ${POM_VERSION} # replaced during jenkins pipeline
 resources:
 - ./ratings-data-service-cluster-ip-service.yaml
 - ./ratings-data-service-service-account.yaml
